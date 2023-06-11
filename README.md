@@ -4,7 +4,7 @@
 Bem-vindo ao Harbor, um projeto autoral que utiliza as tecnologias ASP.NET Core MVC, SQL Server e Entity Framework.
 
 ## Visão Geral
-O objetivo principal do Harbor é permitir o cadastro de container e o registro de suas movimentações, além de fornecer um relatório com informações relevantes sobre esses containers.
+O objetivo principal do Harbor é permitir o cadastro de container e o registro de suas movimentações, além de fornecer um relatório com informações relevantes referente as movimentações.
 
 ## Página Inicial
 ![Página Inicial](https://github.com/ryannferreira/Harbor/assets/107849014/8fadc8c6-9380-4881-982e-cd193d87f863)
