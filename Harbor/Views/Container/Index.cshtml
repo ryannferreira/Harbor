@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Harbor.Models.ContainerModel>
+
+@{
+    ViewData["Title"] = "Containers";
+}
+
+<br />
+<h1 class="text-center">Containers</h1>
+
+<p class="float-end">
+    <a class="btn btn-primary" asp-action="Create">Novo container</a>
+</p>
+<table class="table table-striped" id="table-search">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdContainer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroContainer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdContainer)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroContainer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria)
+            </td>
+            <td>
+                <a type="button" class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.IdContainer">Editar</a>
+                    <a type="button" class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.IdContainer">Detalhes</a>
+                    <a type="button" class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.IdContainer">Remover</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

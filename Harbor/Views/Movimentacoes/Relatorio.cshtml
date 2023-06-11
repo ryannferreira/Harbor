@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Relatório";
+}
+
+<br />
+<h1 class="text-center">Relatório de movimentações</h1>
+
+<br />
+<table class="table table-striped" id="table-search">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Tipo de Movimentação</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.RelatorioMov)
+        {
+            <tr>
+                <td>@item.Cliente</td>
+                <td>@item.TipoMovimentacao</td>
+                <td>@item.Total</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<h2 class="text-center">Sumário</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.RelatorioCont)
+        {
+            <tr>
+                <td>@item.Categoria</td>
+                <td>@item.Total</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<div class="text-center">
+    <a type="button" class="btn btn-primary" asp-action="Index">Voltar para a página inicial</a>
+</div>

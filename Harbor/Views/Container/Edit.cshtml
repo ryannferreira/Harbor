@@ -1,0 +1,65 @@
+﻿@model Harbor.Models.ContainerModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1 class="text-center">Editar container</h1>
+<hr />
+<br />
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdContainer" />
+            <div class="form-group">
+                <label asp-for="NomeCliente" class="control-label"></label>
+                <input asp-for="NomeCliente" class="form-control" />
+                <span asp-validation-for="NomeCliente" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="NumeroContainer" class="control-label"></label>
+                <input asp-for="NumeroContainer" class="form-control" />
+                <span asp-validation-for="NumeroContainer" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <select asp-for="Tipo" class="form-control" asp-items="@ViewBag.Tipo">
+                    <option disabled selected>---Selecione uma opção---</option>
+                </select>
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control" asp-items="@ViewBag.Status">
+                    <option disabled selected>---Selecione uma opção---</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+                <select asp-for="Categoria" class="form-control" asp-items="@ViewBag.Categoria">
+                    <option disabled selected>---Selecione uma opção---</option>
+                </select>
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group text-center">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+            <br />
+            <div class="text-center">
+                <a type="button" class="btn btn-secondary" asp-action="Index">Voltar para a página inicial</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
